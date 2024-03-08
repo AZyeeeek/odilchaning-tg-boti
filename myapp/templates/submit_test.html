@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Test</title>
+</head>
+<body>
+    <h1>Submit Test</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="test_id">Test ID:</label>
+        <select id="test_id" name="test_id" required>
+            {% for test in tests %}
+                <option value="{{ test.test_id }}">{{ test.test_id }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="answers">Answers:</label>
+        <input type="text" id="answers" name="answers" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

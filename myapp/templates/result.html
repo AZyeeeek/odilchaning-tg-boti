@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Result</title>
+</head>
+<body>
+    <h1>Natija</h1>
+    <p>Ism: {{ submission.name }}</p>
+    <p>Test ID: {{ submission.test_id }}</p>
+    <h2>Xato javoblar:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Xato indeksilari</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for idx in submission.incorrect_answers %}
+                <tr>
+                    <td>{{ idx }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
