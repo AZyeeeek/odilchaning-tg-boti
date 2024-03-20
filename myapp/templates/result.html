@@ -15,9 +15,9 @@
             </tr>
         </thead>
         <tbody>
-            {% for idx in range(0,len(submission.incorrect_answers),2) %}
+            {% for idx in incorrect_answers %}
                 <tr>
-                    <td>{{ submission.incorrect_answers[idx] }}</td>
+                    <td>{{ idx }}</td>
                 </tr>
             {% endfor %}
         </tbody>
