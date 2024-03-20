@@ -11,12 +11,12 @@ def submit_test(request):
         correct_answers = test.correct_answer  
         user_answers = answers          
         incorrect_answers = ""
-        for idx in range(0,len(correct_answers) + 1):
+        for idx in range(0,len(correct_answers)):
             if user_answers[idx] != correct_answers[idx]:
                 incorrect_answers+= str(idx)
         # Serialize the dictionary to a string
         
-        submission = Submission.objects.create(name=name, test_id=test_id, answers=answers, user_answers=answers, incorrect_answers=incorrect_answers)
+        submission = Submission.objects.create(name=name, test_id=test_id, answers=correct_answers, user_answers=answers, incorrect_answers=incorrect_answers)
         
         return render(request, 'result.html', {'submission': submission})
     
