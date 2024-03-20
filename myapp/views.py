@@ -16,8 +16,7 @@ def submit_test(request):
                 incorrect_answers+= str(idx+1)
                 incorrect_answers+=','
         submission = Submission.objects.create(name=name, test_id=test_id, answers=correct_answers, user_answers=answers, incorrect_answers=incorrect_answers)
-        
-        return render(request, 'result.html', {'submission': submission},'incorrect_answers':incorrect_answers.split(','))
+        return render(request, 'result.html', {'submission': submission,'incorrect_answers' : incorrect_answers.split(',')},)
     
     tests = Test.objects.all()
     return render(request, 'submit_test.html', {'tests': tests})
