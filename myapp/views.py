@@ -13,7 +13,7 @@ def submit_test(request):
         incorrect_answers = ""
         for idx in range(0,len(correct_answers)):
             if user_answers[idx] != correct_answers[idx]:
-                incorrect_answers+= str(idx+1)
+                incorrect_answers+= str(idx)
         # Serialize the dictionary to a string
         incorrect_answers_str = incorrect_answers
         
